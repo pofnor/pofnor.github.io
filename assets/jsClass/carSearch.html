@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <meta name="keywords" content="HTML, CSS, Responsive, JavaScript , JS, Exercise">
+    <meta name="description" content="Website for exercise JavaScript">
+    <meta name="author" content="Ahmad Mokhtari">         
+    <link rel="shortcut icon" href="../img/icon-logo.ico" type="image/x-icon">  
+    <title>Cars Search</title>    
+    <!-- css -->   
+    <link rel="stylesheet" href="css/carSearch.css">
+    <link rel="stylesheet" href="../css/main.css"> 
+    <!-- JavaScript -->   
+    <script src="../js/main.js"></script> 
+    <script src="../js/menu.js"></script> 
+    <script src="js/carSearch.js"></script>           
+</head>
+<body>
+    <aside id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="../../index.html">Home</a>
+        <script>menuFilter(menuItem,"jsClass");</script>    
+    </aside>
+  <main id="main">
+    <span class="span" onclick="openNav()">&#9776; Menu</span>
+    <section class="container">                  
+        <input id="searchbar" autocomplete="off" onkeyup="search()" 
+            type="text" name="search" placeholder="Search on Company">
+        <br>
+        <a id="priceBtn" class="btn" onclick="sortPrice()">Price Sort</a>  
+        <br>
+        <table id='list'>        
+            <tr id="tableHeader">
+                <th onclick="setSearchCategory('company',this)">Company</th>
+                <th onclick="setSearchCategory('model',this)">Model</th>
+                <th onclick="setSearchCategory('color',this)">Color</th>
+                <th onclick="setSearchCategory('capacity',this)">Capacity</th>
+                <th onclick="setSearchCategory('price',this)">Price</th>
+                <th onclick="setSearchCategory('year',this)">Year</th>
+                <th onclick="setSearchCategory('gear',this)">Gear</th>
+                <th onclick="setSearchCategory('fuel',this)">Fuel</th>
+            </tr>            
+        </table>
+    </section>
+  </main>
+  <script>showCars(cars);</script>    
+</body>
+</html>

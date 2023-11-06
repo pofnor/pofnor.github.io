@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <meta name="keywords" content="HTML, CSS, Responsive, JavaScript , JS, Exercise">
+    <meta name="description" content="Website for exercise JavaScript">
+    <meta name="author" content="Ahmad Mokhtari">         
+    <link rel="shortcut icon" href="../img/icon-logo.ico" type="image/x-icon">     
+    <title>Cat & Mouse Game</title>    
+    <!-- css -->  
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="css/gameCatMouse.css">
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+    <script src="../js/menu.js"></script>
+    <script src="js/gameCatMouse.js"></script>
+</head>
+<body>
+
+  <aside id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="../../index.html">Home</a>
+    <script>menuFilter(menuItem,"jsClass");</script>    
+  </aside>
+
+  <main id="main">
+    <span class="span" onclick="openNav()">&#9776; Menu</span>
+    <section class="container">
+      <h1 id="result">Move the Mouse with <span>Arrow Keys</span></h1>
+      <a id="btnStart" class="btnAnswer" style="display: block;margin: auto;" onclick="start()">START</a>
+      <img id="cat" src="img/Cat.webp" class="cat" alt="Cat">
+      <img id="mouse" src="img/Mouse.png" class="mouse" alt="Mouse">
+    </section>              
+  </main>
+  <script>initiate()</script>  
+</body>
+</html>

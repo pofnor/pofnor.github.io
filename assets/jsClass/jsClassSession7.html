@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <meta name="keywords" content="HTML, CSS, Responsive, JavaScript , JS, Exercise">
+    <meta name="description" content="Website for exercise JavaScript">
+    <meta name="author" content="Ahmad Mokhtari">         
+    <link rel="shortcut icon" href="../img/icon-logo.ico" type="image/x-icon">     
+    <title>JavaScript Class Exercise</title>    
+    <!-- css -->  
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="css/clock.css">        
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+    <script src="../js/menu.js"></script>
+    <script src="js/jsClassSession7.js"></script>
+</head>
+<body>
+
+  <aside id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="../../index.html">Home</a>
+    <script>menuFilter(menuItem,"jsClass");</script>    
+  </aside>
+
+  <main id="main">
+    <span class="span" onclick="openNav()">&#9776; Menu</span>
+    <section class="container">       
+      <!-- <h1>Enter <span>ctrl+shift+j</span> to see output</h1>       -->
+      <!-- Analog Clock -->
+      <section class="clock">        
+          <div class="hour"   id="hour"></div>                
+          <div class="minute" id="minute"></div>        
+          <div class="second" id="second"></div>
+      </section>
+      <script>clock()</script>    
+      <!------------------------------ Code Section ------------------------------>
+      <section class="code">
+        <img src="img/eventflow.svg" style="margin-left:200px;width:40%;" alt="Event Flow">
+        <p id="eventParent">addEventListener(type, listener, useCapture="
+          <span id="eventChild">false</span>")<br><br></p>          
+        <a class="btnAnswer" onclick="capture(true)">Capture</a>
+        <a class="btnAnswer" onclick="capture(false)">Bubble</a>        
+        <br><br>
+        
+        <code class="codeShow">
+          //First Click on Button then Click on "false"<br>
+          //See the Result on "Show Output"<br>
+          function capture(useCapture){<br>
+            &nbsp const result = document.getElementById("eventOutput");<br>
+            &nbsp const eventParent = document.getElementById("eventParent");<br>
+            &nbsp const eventChild = document.getElementById("eventChild");<br>            
+            &nbsp result.innerHTML = "";<br>              
+            &nbsp function parent(){<br>
+              &nbsp &nbsp result.innerHTML += "Parent " ;<br>
+              &nbsp &nbsp eventParent.removeEventListener("click", parent );<br>
+              &nbsp &nbsp eventParent.removeEventListener("click", parent, true );<br>
+              &nbsp }<br>
+            &nbspfunction child(){<br>
+              &nbsp &nbsp result.innerHTML += "Child " ;<br>
+              &nbsp &nbsp eventChild.removeEventListener("click", child );<br>
+              &nbsp }<br>            
+            &nbsp if(useCapture){<br>
+              &nbsp &nbsp eventParent.addEventListener("click", parent, true);<br>
+              &nbsp &nbsp eventChild.addEventListener("click", child);<br>
+              &nbsp }<br>
+            &nbsp if(!useCapture){<br>
+              &nbsp &nbsp eventParent.addEventListener("click", parent);<br>
+              &nbsp &nbsp eventChild.addEventListener("click", child);<br>
+              &nbsp }<br>
+          }<br>
+        </code>
+        <h1 class="question">Show Output</h1>       
+        <samp id="eventOutput" class="output">          
+        </samp>      
+      </section>
+      <!------------------------------ Code Section ------------------------------>   
+      <section class="code">
+        <h1 id="addRemoveEvent" style="cursor: pointer;">Click on Me</h1>        
+        <a class="btnAnswer" onclick="addEvent()">Add Event</a>
+        <a class="btnAnswer" onclick="removeEvent()">Remove Event</a>
+        <br><br>
+      </section>
+            <!------------------------------ Code Section ------------------------------>   
+    </section>              
+  </main>
+  <script>load()</script>
+</body>
+</html>

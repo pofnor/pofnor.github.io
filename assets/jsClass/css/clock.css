@@ -1,0 +1,126 @@
+/* add the clock.png image. */
+.clock {
+  margin: auto;
+  position: relative;
+  width: 200px;
+  height: 200px;  
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  background: url(../img/clock.webp);
+  background-size: cover;
+  border: 4px solid #091921;
+  border-radius: 50%;  
+  /* inset = Changes the shadow from an outer shadow (outset) to an inner shadow  */
+  /* Define multiple shadows */
+  box-shadow: 0 -15px 15px rgba(255,255,255,0.05),
+  inset 0 -15px 15px rgba(255,255,255,0.05),
+  0 15px 15px rgba(0,0,0,0.3),
+  inset 0 15px 15px rgba(0,0,0,0.3);    
+}
+
+/* ------- Create hour hand, minute hand, and second hand. ------ */
+
+/* circle of center of clock */
+/* .clock::before { 
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: #fff;
+  border-radius: 50%;
+  z-index: 10000;
+} */
+
+/* circle of center of clock */
+.clock::before {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: #c0b5b5;
+  border-radius: 50%;
+  top: 45%;
+  left: 46%;
+  z-index: 1;  
+}
+
+.hour, .minute, .second {
+  position: absolute;  
+  border-radius: 10px;
+  transform-origin: bottom;
+  /* display: flex;
+  justify-content: center;
+  position: absolute;
+  border-radius: 50%; */
+}
+
+.clock .hour {
+  background: #ff105e;  
+  width: 3%;
+  height: 20%;
+  top: 29%;
+  left: 48.85%;
+  opacity: 0.8;
+}
+ 
+.clock .minute {    
+  background: #1093ff;  
+  width: 2%;
+  height: 30%;
+  top: 19%;
+  left: 48.9%;
+  opacity: 0.8;
+}
+ 
+.clock .second {
+  background: #d4af37;
+  width: 1%;
+  height: 40%;
+  top: 9%;
+  left: 49.25%;
+  opacity: 0.8;
+}
+
+/* 
+.clock .hour {
+  width: 110px;
+  height: 110px;
+}
+.hour::before {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 50px;
+  background: #ff105e;
+  z-index: 10;
+  border-radius: 6px 6px 0 0;
+} */
+/* 
+.clock .minute {
+  width: 130px;
+  height: 130px;
+}
+.minute::before {
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 60px;
+  background: #fff;
+  z-index: 11;
+  border-radius: 6px 6px 0 0;
+} */
+
+/* .clock .second {
+  width: 150px;
+  height: 150px;
+}
+.second::before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 70px;
+  background: #fff;
+  z-index: 12;
+  border-radius: 6px 6px 0 0;
+} */

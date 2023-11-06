@@ -1,7 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <meta name="keywords" content="HTML, CSS, Responsive, JavaScript , JS, Exercise">
+    <meta name="description" content="Website for exercise JavaScript">
+    <meta name="author" content="Ahmad Mokhtari">       
+    <link rel="shortcut icon" href="assets/img/icon-logo.ico" type="image/x-icon">
+    <title>JavaScript Class</title>
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/jsClass/css/login.css">
+    <!-- JavaScript -->
+    <script src="assets/jsClass/js/axios/axios.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/menu.js"></script>
+    <script src="assets/js/search.js"></script>
+    <!-- Google Fonts -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Salsa&display=swap" rel="stylesheet"> -->
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm Ahmad</p>
+
+  <aside id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="index.html">Home</a>
+    <script>menuFilter(menuItem,"jsClass","true");</script>    
+  </aside>  
+
+  <main id="main">
+    <span class="span" onclick="openNav()">&#9776; Menu</span>
+    <section class="container">
+      <div id="postMethodButton" style="margin: auto;">
+        <a id ="exact" class="loginBtn" style="font-size: 22px;" onclick="searchMethod('Exact')">Exact</a>    
+        <a id ="anywhere" class="loginBtn" onclick="searchMethod('Anywhere')">Anywhere</a>
+      </div><br>
+      <section class="autocomplete">
+      <input id="searchbar" autocomplete="off" type="text"
+      name="search" placeholder="Search Topic ...">      
+      </section>
+      <br>
+      <!-- Loader -->
+      <div id="loader" style="margin: auto;text-align: center;">
+      <div id="loaderIcon" class="loaderIcon"><div></div><div></div><div></div><div></div></div>
+      <p id="loaderText" class="loaderText">Loading...</p>              
+      </div>
+    </section>
+    <section id="result" class="container">
+    </section>
+  </main>    
 </body>
 </html>

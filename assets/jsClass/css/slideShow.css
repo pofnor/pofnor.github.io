@@ -1,0 +1,200 @@
+:root{
+  --gold : rgb(237, 167, 32);
+  --gold70 : rgba(237, 169, 32, 0.7);
+}
+
+* {
+  box-sizing:border-box;
+  color: var(--gold);    
+}
+
+.slideshow {
+  max-width: 1000px;  
+  position: relative;
+  margin: auto;
+}
+
+.Slides {
+  display: none;
+}
+
+.slideImage{
+  width:100%;
+}
+
+#dotContainer{
+  text-align: center;
+}
+
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;  
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  background-color: rgba(0,0,0,0.2);
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.slideCaption {
+  font-family: 'Salsa', cursive;
+  font-size: 45px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 80px;
+  width: 100%;
+  text-align: center;
+  background-color: black;
+}
+
+/* Slide Number (1/3 etc) */
+.slideNumber {
+  font-family: 'Salsa', cursive;    
+  font-size: 12px;
+  padding: 8px;
+  position: absolute;
+  top: 0;
+  background-color: rgba(0,0,0,0.2);
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 4px;
+  background-color: var(--gold70);
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.dotActive, .dot:hover {
+  background-color: var(--gold);
+  width: 30px;
+  border-radius: 20%;
+  transition: 0.4s ease-in-out;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* -------------------Modal--------------------- */
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  padding-top: 100px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%;
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.4); 
+}
+
+.modalContent {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 10px;
+  border: 1px solid #888;
+  width: 60%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+.modalClose {
+  color: var(--gold);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.modalClose:hover,.modalClose:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modalBody {
+  padding: 2px 16px;
+}
+
+.modalText{
+  font-family: 'Salsa', cursive;
+  letter-spacing: 2px;
+  line-height: 30px;
+  color: black;
+  font-size: 18px;
+}
+
+/* ------------------Button-------------------------- */
+.btnSlide{        
+  margin-right: 20px;
+  font-family: 'Salsa', cursive;  
+  text-decoration: none;
+  border: 1px solid black;
+  background-color: black;
+  width: 100px;
+  height: 30px;
+  text-align: center;
+  padding: 3px;  
+  cursor: pointer;
+  position: absolute;
+  bottom: 30px;
+  right: 0;
+
+}
+.btnSlideHref{
+  margin-right: 140px;
+  font-family: 'Salsa', cursive;  
+  text-decoration: none;
+  border: 1px solid black;
+  background-color: black;
+  width: 100px;
+  height: 30px;
+  text-align: center;
+  padding: 3px;  
+  cursor: pointer;
+  position: absolute;
+  bottom: 30px;
+  right: 0;
+}
+.btnSlide:active , .btnSlideHref:active{  
+  background-color: var(--gold);
+}
+.btnSlide:hover , .btnSlideHref:hover{
+  color:#e8eaed;
+  border: 1px solid #9aa0a6;    
+}

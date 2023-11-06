@@ -1,0 +1,75 @@
+:root{
+    --font:'Fredericka the Great', cursive;
+    --blue:#8ab4f8;
+    --black:#202124;
+    --white:#e8eaed;
+    --white100:#fff;
+    --gray:#9aa0a6;
+    --border:#5f6368;    
+    --darkgray:#303030;
+}
+body{
+    background-color: var(--darkgray);
+}
+.classroom{
+    display: flex;
+    margin: 20px;    
+    justify-content: space-evenly;
+    align-items: center;
+}
+.board{
+    width: 400px;
+    height: 393px;        
+    background-color: var(--darkgray);        
+    background-image: url(../img/board.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.boardQuestion{
+    font-size: 32px;
+    padding: 20px;
+    color: var(--white);
+    font-family: var(--font);
+    line-height: 1.6;
+}
+.boardAnswer{  
+    padding: 15px;
+    color: var(--blue);
+    font-family: var(--font);
+    white-space: pre-wrap; /*  for go to new line when we use \n at text */
+    line-height: 1.6;
+    font-size: 18px;
+}
+.btnAnswer{    
+    color:var(--blue);
+    text-decoration: none;
+    border: 1px solid var(--blue);
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    padding-top: 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.btnAnswer:active{
+    color:var(--white);
+    background-color: var(--blue);
+}
+.btnAnswer:hover{
+    color:var(--white);
+    border: 1px solid var(--gray);
+}
+.bigTitle{
+    font-size: 42px;
+    font-weight: 400;
+}
+/*B**************************** media  ****************************B*/
+@media screen and (max-width: 1000px) {
+    .classroom{
+        flex-direction: column;        
+    }
+    .board{
+        margin: 50px;
+    }
+}
+/*E**************************** media  ****************************E*/

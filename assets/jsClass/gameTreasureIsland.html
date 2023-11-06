@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <meta name="keywords" content="HTML, CSS, Responsive, JavaScript , JS, Exercise">
+    <meta name="description" content="Website for exercise JavaScript">
+    <meta name="author" content="Ahmad Mokhtari">         
+    <link rel="shortcut icon" href="../img/icon-logo.ico" type="image/x-icon">     
+    <title>Treasure Island Game</title>    
+    <!-- css -->  
+    <link rel="stylesheet" href="../css/main.css">    
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+    <script src="../js/menu.js"></script>
+    <script src="js/gameTreasureIsland.js"></script>
+</head>
+<body>
+
+  <aside id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="../../index.html">Home</a>
+    <script>menuFilter(menuItem,"jsClass");</script>    
+  </aside>
+
+  <main id="main">
+    <span class="span" onclick="openNav()">&#9776; Menu</span>
+    <section class="container">
+      <h1 id="result" style="text-align: center;">Find the Location of <span>Treasure Island</span></h1>      
+      <img id="treasureIsland" src="img/TreasureIsland.png" style="display:none;position:fixed;width:50px;height:50px;" alt="TreasureIsland">      
+    </section>              
+  </main>
+  <script>initiate()</script>  
+</body>
+</html>
